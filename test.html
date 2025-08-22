@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Page</title>
+</head>
+<body>
+  <h1>Test Page</h1>
+  <div id="contentInner">
+    <p>This is test content</p>
+  </div>
+  
+  <button onclick="testShowMainPage()">Test Show Main Page</button>
+  
+  <script>
+    function testShowMainPage() {
+      const container = document.getElementById('contentInner');
+      if (container) {
+        container.innerHTML = `
+          <h2>Main Page Loaded Successfully!</h2>
+          <p>JavaScript is working correctly.</p>
+        `;
+      } else {
+        alert('Container not found!');
+      }
+    }
+    
+    console.log('Test page loaded');
+  </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Test - Computer Systems</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">Class 9: Computer Systems</a>
+      <button class="btn btn-outline-light" onclick="showMainPage()">🏠 Home</button>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <aside id="sidebar" class="col-12 col-lg-4 col-xl-3 border-end bg-white p-3">
+        <h5>Topics</h5>
+        <div class="list-group">
+          <button class="list-group-item list-group-item-action" onclick="showTopic('1.1')">1.1 Introduction to Computer Systems</button>
+          <button class="list-group-item list-group-item-action" onclick="showTopic('1.2')">1.2 Input Devices</button>
+          <button class="list-group-item list-group-item-action" onclick="showTopic('1.3')">1.3 Central Processing Unit (CPU)</button>
+          <button class="list-group-item list-group-item-action" onclick="showTopic('1.4')">1.4 Motherboard and Data Bus</button>
+          <button class="list-group-item list-group-item-action" onclick="showTopic('1.5')">1.5 Memory (Primary and Secondary)</button>
+          <button class="list-group-item list-group-item-action" onclick="showTopic('1.6')">1.6 Output Devices</button>
+          <button class="list-group-item list-group-item-action" onclick="showTopic('1.7')">1.7 Computer Software</button>
+        </div>
+      </aside>
+
+      <main id="content" class="col-12 col-lg-8 col-xl-9 p-4">
+        <div id="contentInner">
+          <h1>Welcome to Class 9 Computer Systems</h1>
+          <p>Select a topic from the left sidebar to get started.</p>
+          <button class="btn btn-primary" onclick="showQuizIntro()">Start MCQ Quiz</button>
+          <div id="quizContainer" class="mt-4"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    function showMainPage() {
+      const container = document.getElementById('contentInner');
+      container.innerHTML = `
+        <h1>Welcome to Class 9 Computer Systems</h1>
+        <p>Select a topic from the left sidebar to get started.</p>
+        <button class="btn btn-primary" onclick="showQuizIntro()">Start MCQ Quiz</button>
+        <div id="quizContainer" class="mt-4"></div>
+      `;
+    }
+
+    function showTopic(topicId) {
+      const container = document.getElementById('contentInner');
+      container.innerHTML = `
+        <h2>Topic ${topicId}</h2>
+        <p>Content for topic ${topicId} will be displayed here.</p>
+        <button class="btn btn-primary" onclick="showMainPage()">Back to Home</button>
+      `;
+    }
+
+    function showQuizIntro() {
+      const container = document.getElementById('quizContainer');
+      container.innerHTML = `
+        <div class="card">
+          <div class="card-header">
+            <h5>MCQ Quiz Selection</h5>
+          </div>
+          <div class="card-body">
+            <p>Choose a topic to test your knowledge:</p>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <h6>Computer Systems Basics</h6>
+                    <button class="btn btn-primary">Start Quiz</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <h6>Input Devices</h6>
+                    <button class="btn btn-success">Start Quiz</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-secondary" onclick="showMainPage()">Back to Home</button>
+          </div>
+        </div>
+      `;
+    }
+
+    console.log('Simple test page loaded successfully!');
+  </script>
+</body>
+</html>

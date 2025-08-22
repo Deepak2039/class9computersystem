@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minimal Test</title>
+</head>
+<body>
+  <h1>Minimal Test</h1>
+  <div id="contentInner">Loading...</div>
+  <button onclick="testFunction()">Test Function</button>
+  
+  <script>
+    // Test if basic JavaScript works
+    console.log('Minimal test page loaded');
+    
+    function testFunction() {
+      const container = document.getElementById('contentInner');
+      if (container) {
+        container.innerHTML = '<h2>Test Successful!</h2><p>JavaScript is working.</p>';
+      } else {
+        alert('Container not found');
+      }
+    }
+    
+    // Test DOM ready
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM ready in minimal test');
+      const container = document.getElementById('contentInner');
+      console.log('Container found:', container);
+    });
+  </script>
+</body>
+</html>

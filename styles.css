@@ -1,0 +1,72 @@
+/* Basic polish and sidebar behaviors */
+
+/* Smooth hover for list items */
+.list-group-item-action {
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+/* Active subtopic highlight */
+.subtopic-active {
+  background-color: #e0f2fe !important; /* tailwind sky-100 */
+  color: #0c4a6e !important;            /* tailwind sky-900 */
+  font-weight: 600;
+}
+
+/* Module header button appearance */
+.module-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}
+
+.module-toggle:hover {
+  background: #f1f5f9; /* slate-100 */
+}
+
+.chevron {
+  transition: transform 150ms ease;
+}
+
+.chevron.rotate {
+  transform: rotate(90deg);
+}
+
+/* Nested subtopic list spacing */
+.subtopics {
+  padding-left: 0.5rem;
+}
+
+/* Prose-like content spacing */
+#contentInner h2, #contentInner h3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+#contentInner p {
+  line-height: 1.7;
+}
+
+#contentInner img.content-hero {
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* Mobile sidebar overlay helper */
+@media (max-width: 991.98px) {
+  #sidebar.overlay {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1040;
+    background: #ffffff;
+  }
+}
+
+
