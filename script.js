@@ -2716,6 +2716,80 @@ function printCertificate() {
 document.addEventListener('DOMContentLoaded', function() {
   console.log('DOM Content Loaded - Initializing page...');
   
+  // Image CDN support and auto-fix for broken/local image paths
+  // Set window.IMAGE_CDN_BASE = 'https://your-domain.com/path' to force absolute internet URLs
+  if (!window.IMAGE_CDN_BASE) {
+    window.IMAGE_CDN_BASE = '';
+  }
+  
+  function getImageUrl(relativePath) {
+    if (window.IMAGE_CDN_BASE && typeof window.IMAGE_CDN_BASE === 'string' && window.IMAGE_CDN_BASE.trim() !== '') {
+      const base = window.IMAGE_CDN_BASE.replace(/\/$/, '');
+      const rel = String(relativePath || '').replace(/^\//, '');
+      return base + '/' + rel;
+    }
+    return relativePath;
+  }
+  
+  function getPlaceholderFromPath(path) {
+    try {
+      const name = String(path || '').split('/').pop().replace(/\.[^.]+$/, '') || 'Image';
+      return 'https://via.placeholder.com/800x400?text=' + encodeURIComponent(name);
+    } catch (e) {
+      return 'https://via.placeholder.com/800x400?text=Image';
+    }
+  }
+  
+  function rewriteImageElement(imgEl) {
+    if (!imgEl || !imgEl.getAttribute) return;
+    const currentSrc = imgEl.getAttribute('src') || '';
+    if (currentSrc.startsWith('images/')) {
+      const newSrc = getImageUrl(currentSrc);
+      if (newSrc && newSrc !== currentSrc) {
+        imgEl.setAttribute('src', newSrc);
+      }
+    }
+    if (!imgEl._hasErrorHandler) {
+      imgEl.onerror = function() {
+        this.onerror = null;
+        const original = currentSrc || this.getAttribute('src') || '';
+        this.src = getPlaceholderFromPath(original);
+      };
+      imgEl._hasErrorHandler = true;
+    }
+  }
+  
+  function installImageFixer() {
+    // Initial pass for existing images
+    try {
+      document.querySelectorAll('img').forEach(rewriteImageElement);
+    } catch (e) {
+      console.warn('Image fixer initial pass failed:', e);
+    }
+    // Observe future DOM changes to handle dynamically inserted images
+    try {
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.addedNodes && mutation.addedNodes.forEach((node) => {
+            if (node && node.nodeType === 1) {
+              if (node.tagName === 'IMG') {
+                rewriteImageElement(node);
+              } else if (node.querySelectorAll) {
+                node.querySelectorAll('img').forEach(rewriteImageElement);
+              }
+            }
+          });
+        });
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    } catch (e) {
+      console.warn('Image fixer observer failed:', e);
+    }
+  }
+  
+  // Activate image fixer now so it works for existing and future content
+  installImageFixer();
+  
   // Initialize DOM element variables
   topicsNav = document.getElementById("topicsNav");
   contentInner = document.getElementById("contentInner");
