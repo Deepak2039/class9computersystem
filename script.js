@@ -1010,7 +1010,7 @@ function showQuizIntro() {
             <div class="card h-100">
               <div class="card-body text-center">
                 <h6 class="card-title">1.1 Introduction to Computer Systems</h6>
-                <p class="card-text small">27 questions covering computer systems basics, features, applications, and IPOS cycle.</p>
+                <p class="card-text small">20 questions covering computer systems basics, features, applications, and IPOS cycle.</p>
                 <button class="btn btn-primary" onclick="showTopicMCQ('1.1')">Start Quiz</button>
               </div>
             </div>
@@ -1378,62 +1378,6 @@ const mcqData = {
         options: ["8GB", "4GB", "0GB", "16GB"],
         correct: 0,
         explanation: "4 applications × 2GB each = 8GB used. 16GB total - 8GB used = 8GB available."
-      },
-      {
-        id: 21,
-        type: "Knowledge",
-        question: "What is the full form of CPU?",
-        options: ["Central Processing Unit", "Computer Processing Unit", "Central Program Unit", "Computer Program Unit"],
-        correct: 0,
-        explanation: "CPU stands for Central Processing Unit, which is the brain of the computer."
-      },
-      {
-        id: 22,
-        type: "Application",
-        question: "A student wants to create a digital presentation. Which computer application would be most suitable?",
-        options: ["Spreadsheet", "Presentation software", "Database", "Text editor"],
-        correct: 1,
-        explanation: "Presentation software like PowerPoint is specifically designed for creating digital presentations with slides."
-      },
-      {
-        id: 23,
-        type: "Understanding",
-        question: "Why is computer storage capacity measured in bytes rather than bits?",
-        options: ["Bytes are smaller", "Bytes represent meaningful data units", "Bits are too large", "Bytes are faster"],
-        correct: 1,
-        explanation: "Bytes represent meaningful data units (like characters), while bits are too small to be practical for storage measurement."
-      },
-      {
-        id: 24,
-        type: "Higher Ability",
-        question: "If a computer processes 2.5 billion instructions per second, how many instructions can it process in 0.1 seconds?",
-        options: ["250 million", "2.5 billion", "25 million", "250 billion"],
-        correct: 0,
-        explanation: "2.5 billion instructions per second × 0.1 seconds = 250 million instructions."
-      },
-      {
-        id: 25,
-        type: "Knowledge",
-        question: "What does SSD stand for?",
-        options: ["Solid State Drive", "Software Storage Device", "System Storage Drive", "Solid Storage Device"],
-        correct: 0,
-        explanation: "SSD stands for Solid State Drive, which uses flash memory instead of mechanical parts."
-      },
-      {
-        id: 26,
-        type: "Application",
-        question: "A business needs to manage customer information and sales data. Which type of software would be most appropriate?",
-        options: ["Word processor", "Database management system", "Web browser", "Photo editor"],
-        correct: 1,
-        explanation: "A database management system is designed specifically for storing, organizing, and managing large amounts of data like customer information."
-      },
-      {
-        id: 27,
-        type: "Understanding",
-        question: "How does the motherboard facilitate communication between different computer components?",
-        options: ["Through wireless signals", "Through physical connections and electrical pathways", "Through the internet", "Through sound waves"],
-        correct: 1,
-        explanation: "The motherboard facilitates communication through physical connections (sockets, slots) and electrical pathways (buses) between components."
       }
     ]
   },
