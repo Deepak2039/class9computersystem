@@ -862,6 +862,7 @@ function handleSubtopicClick(moduleId, subtopicId, updateHash = false) {
           </button>
         </div>
       </div>
+      <div id="quizContainer" class="mt-4"></div>
     </section>
   `;
 
@@ -1184,25 +1185,25 @@ function showTopicMCQ(topicId) {
           <div class="col-md-3">
             <div class="text-center">
               <h6 class="text-primary">Knowledge</h6>
-              <small class="text-muted">5 questions</small>
+              <small class="text-muted">${topicData.questions.filter(q => q.type === "Knowledge").length} questions</small>
             </div>
           </div>
           <div class="col-md-3">
             <div class="text-center">
               <h6 class="text-success">Application</h6>
-              <small class="text-muted">5 questions</small>
+              <small class="text-muted">${topicData.questions.filter(q => q.type === "Application").length} questions</small>
             </div>
           </div>
           <div class="col-md-3">
             <div class="text-center">
               <h6 class="text-warning">Understanding</h6>
-              <small class="text-muted">5 questions</small>
+              <small class="text-muted">${topicData.questions.filter(q => q.type === "Understanding").length} questions</small>
             </div>
           </div>
           <div class="col-md-3">
             <div class="text-center">
               <h6 class="text-info">Higher Ability</h6>
-              <small class="text-muted">5 questions</small>
+              <small class="text-muted">${topicData.questions.filter(q => q.type === "Higher Ability").length} questions</small>
             </div>
           </div>
         </div>
