@@ -1413,16 +1413,16 @@ const mcqData = {
         type: "Knowledge",
         question: "What does a microphone convert sound into?",
         options: ["Digital format", "Analog format", "Text format", "Image format"],
-        correct: 0,
-        explanation: "A microphone converts sound into a digital format that a computer can process."
+        correct: 1,
+        explanation: "A microphone converts sound into analog format, which is then converted to digital format by the computer's sound card."
       },
       {
         id: 5,
         type: "Knowledge",
         question: "What is a touchpad also called?",
         options: ["Mouse pad", "Glide pad", "Track pad", "Slide pad"],
-        correct: 1,
-        explanation: "A touchpad is also called a Glide pad or trackpad."
+        correct: 2,
+        explanation: "A touchpad is also called a Track pad or glidepad."
       },
       {
         id: 6,
@@ -2465,7 +2465,16 @@ function nextQuestion(questionIndex) {
 
 function showResults() {
   const totalQuestions = currentQuiz.questions.length;
-  const correctAnswers = Object.values(userAnswers).filter(answer => answer !== undefined).length;
+  
+  // Calculate correct answers by comparing user answers with correct answers
+  let correctAnswers = 0;
+  currentQuiz.questions.forEach(question => {
+    const userAnswer = userAnswers[question.id];
+    if (userAnswer === question.correct) {
+      correctAnswers++;
+    }
+  });
+  
   const percentage = Math.round((correctAnswers / totalQuestions) * 100);
   
   let grade, gradeClass;
@@ -2570,7 +2579,43 @@ function showResults() {
       `;
     }
   } else {
-    // Regular quiz results
+    // Regular quiz results with detailed review
+    let detailedReview = '';
+    
+    currentQuiz.questions.forEach((question, index) => {
+      const userAnswer = userAnswers[question.id];
+      const isCorrect = userAnswer === question.correct;
+      const userAnswerText = userAnswer !== undefined ? question.options[userAnswer] : 'Not answered';
+      const correctAnswerText = question.options[question.correct];
+      
+      detailedReview += `
+        <div class="card mb-3 ${isCorrect ? 'border-success' : 'border-danger'}">
+          <div class="card-header ${isCorrect ? 'bg-success' : 'bg-danger'} text-white">
+            <h6 class="mb-0">Question ${index + 1} - ${isCorrect ? '✅ Correct' : '❌ Incorrect'}</h6>
+          </div>
+          <div class="card-body">
+            <div class="mb-2">
+              <span class="badge bg-secondary">${question.type}</span>
+            </div>
+            <p class="fw-bold">${question.question}</p>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <p><strong>Your Answer:</strong> <span class="${isCorrect ? 'text-success' : 'text-danger'}">${userAnswerText}</span></p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Correct Answer:</strong> <span class="text-success">${correctAnswerText}</span></p>
+              </div>
+            </div>
+            
+            <div class="alert alert-info">
+              <strong>Explanation:</strong> ${question.explanation}
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
     container.innerHTML = `
       <div class="card">
         <div class="card-header bg-primary text-white">
@@ -2596,10 +2641,17 @@ function showResults() {
             </div>
           </div>
 
-          <div class="d-flex gap-2 justify-content-center">
+          <div class="d-flex gap-2 justify-content-center mb-4">
             <button class="btn btn-primary" onclick="showTopicMCQ('${currentQuiz.id}')">Take Another Quiz</button>
             <button class="btn btn-secondary" onclick="showQuizIntro()">View All Quizzes</button>
             <button class="btn btn-secondary" onclick="showMainPage()">Back to Main Page</button>
+          </div>
+
+          <hr>
+          
+          <div class="mt-4">
+            <h5 class="mb-3">📋 Detailed Review</h5>
+            ${detailedReview}
           </div>
         </div>
       </div>
