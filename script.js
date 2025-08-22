@@ -38,7 +38,7 @@ const curriculum = [
             <li>Performs millions of instructions per second (MIPS).</li>
             <li><em>Example</em>: Complex calculations that take hours for humans are done in seconds.</li>
           </ul>
-          <img src="images/storage.png" alt="Speed illustration" class="img-fluid rounded shadow-sm my-2" />
+          <img src="images/storage.png" alt="Speed illustration" class="img-fluid rounded shadow-sm my-2" style="max-width: 400px; width: 100%;" />
 
           <h4 class="h6 mt-3">Accuracy</h4>
           <ul>
@@ -55,7 +55,7 @@ const curriculum = [
             <li>Common units: Byte → KB → MB → GB → TB → PB.</li>
             <li><em>Example</em>: A 1 TB drive can store thousands of movies and documents.</li>
           </ul>
-          <img src="images/storage1.png" alt="Storage devices" class="img-fluid rounded shadow-sm my-2" />
+          <img src="images/storage1.png" alt="Storage devices" class="img-fluid rounded shadow-sm my-2" style="max-width: 400px; width: 100%;" />
 
           <h4 class="h6 mt-3">Diligence</h4>
           <ul>
@@ -76,7 +76,7 @@ const curriculum = [
         title: "Application areas of computer systems",
         image: "",
         html: `
-          <img src="images/application.png" alt="Application areas" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/application.png" alt="Application areas" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <h4 class="h6 mt-3">Education</h4>
           <ul>
             <li>Computers are widely used in the education sector for both teaching and learning.</li>
@@ -118,7 +118,7 @@ const curriculum = [
         title: "Functions of a computer system",
         image: "",
         html: `
-          <img src="images/ipos.png" alt="IPOS Cycle" class="img-fluid rounded shadow-sm mb-3" />
+          <img src="images/ipos.png" alt="IPOS Cycle" class="img-fluid rounded shadow-sm mb-3" style="max-width: 400px; width: 100%;" />
           <p>A computer system performs four basic functions known as the <strong>IPOS cycle</strong>:</p>
           
           <h4 class="h6 mt-3">1. Input</h4>
@@ -168,7 +168,7 @@ const curriculum = [
           <p>Input devices are hardware tools used to input raw data and instructions into a computer system. These devices allow users to provide data for processing.</p>
           
           <h4 class="h6 mt-3">Mouse</h4>
-          <img src="images/mouse.png" alt="Computer Mouse" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/mouse.png" alt="Computer Mouse" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>The mouse is a popular handheld pointing input device used to interact with computers.</li>
             <li>It is primarily used for tasks such as pointing at objects, giving commands, and drawing or painting.</li>
@@ -177,7 +177,7 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">Keyboard</h4>
-          <img src="images/keyboard.png" alt="Computer Keyboard" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/keyboard.png" alt="Computer Keyboard" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>The keyboard is a popular input device used to enter data into the computer by typing.</li>
             <li>The most common keyboard layout is the "QWERTY" keyboard, named after the first six letters in the top row of keys.</li>
@@ -186,28 +186,28 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">Joystick</h4>
-          <img src="images/joystick.png" alt="Joystick" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/joystick.png" alt="Joystick" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>A joystick is an input device commonly used for playing video games.</li>
             <li>It consists of a stick that can be moved in various directions and typically features additional buttons for controlling gameplay.</li>
           </ul>
 
           <h4 class="h6 mt-3">Microphone</h4>
-          <img src="images/microphone.png" alt="Microphone" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/microphone.png" alt="Microphone" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>A microphone is an input device used to capture sound and convert it into a digital format that a computer can process.</li>
             <li>It is widely used for voice chat and video conferencing via platforms such as Skype, Viber, Facebook Messenger, and others.</li>
           </ul>
 
           <h4 class="h6 mt-3">Scanner</h4>
-          <img src="images/scanner.png" alt="Scanner" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/scanner.png" alt="Scanner" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>A scanner is an input device designed to convert physical documents or drawings into a digital format.</li>
             <li>It functions by capturing images or text from a physical document and then transferring this data to the computer in a digital format.</li>
           </ul>
 
           <h4 class="h6 mt-3">Webcam</h4>
-          <img src="images/webcam.png" alt="Webcam" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/webcam.png" alt="Webcam" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>A webcam is a digital device that captures real-time video and audio.</li>
             <li>It is widely used for video conferencing, online streaming, content creation, remote work, online education, and social interactions.</li>
@@ -215,7 +215,7 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">Touchscreen</h4>
-          <img src="images/touchscreen.png" alt="Touchscreen" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/touchscreen.png" alt="Touchscreen" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>A touchscreen is a display panel that is sensitive to touch, allowing users to interact directly with what is displayed on the screen.</li>
             <li>Initially popularized in smartphones, touch screens are now commonly found in laptops, notebooks, palmtops, and desktop computers.</li>
@@ -223,7 +223,7 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">Touchpad</h4>
-          <img src="images/touchpad.png" alt="Touchpad" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/touchpad.png" alt="Touchpad" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>A touchpad is a touch-sensitive pad found in laptops, also called a Glide pad or trackpad.</li>
             <li>It acts like a mouse, letting users move the cursor by sliding their fingers.</li>
@@ -244,7 +244,7 @@ const curriculum = [
         html: `
           <p>The Central Processing Unit (CPU), often referred to as the "brain of the computer," is the primary component within the processing unit. It is responsible for receiving data from the input unit, executing instructions provided by the user, and generating output information.</p>
           
-          <img src="images/cpu.png" alt="CPU" class="img-fluid rounded shadow-sm mb-3" />
+          <img src="images/cpu.png" alt="CPU" class="img-fluid rounded shadow-sm mb-3" style="max-width: 400px; width: 100%;" />
           
           <h4 class="h6 mt-3">CPU Functions</h4>
           <ul>
@@ -263,7 +263,7 @@ const curriculum = [
         html: `
           <p>The speed of a computer depends mainly on its microprocessor. The microprocessor has three main parts: Control Unit (CU), Arithmetic Logic Unit (ALU) and Memory Unit (Registers).</p>
           
-          <img src="images/cpu-components.png" alt="CPU Components" class="img-fluid rounded shadow-sm mb-3" />
+          <img src="images/cpu-components.png" alt="CPU Components" class="img-fluid rounded shadow-sm mb-3" style="max-width: 400px; width: 100%;" />
           
           <h4 class="h6 mt-3">Control Unit (CU)</h4>
           <ul>
@@ -298,7 +298,7 @@ const curriculum = [
         html: `
           <p>The motherboard is known as the PCB (Printed Circuit Board), or system board, or main circuit board. It serves as the foundation of the computer system which hosts various components such as the microprocessor, slots, ports, and other essential chips.</p>
           
-          <img src="images/motherboard.png" alt="Motherboard" class="img-fluid rounded shadow-sm mb-3" />
+          <img src="images/motherboard.png" alt="Motherboard" class="img-fluid rounded shadow-sm mb-3" style="max-width: 400px; width: 100%;" />
           
           <h4 class="h6 mt-3">Physical Connections</h4>
           <ul>
@@ -327,7 +327,7 @@ const curriculum = [
         html: `
           <p>Buses are connected lines or electronic pathways within a microprocessor chip that link its internal components. Data, address, and control are typically three types of buses in a microprocessor.</p>
           
-          <img src="images/data-bus.png" alt="Data Bus" class="img-fluid rounded shadow-sm mb-3" />
+          <img src="images/data-bus.png" alt="Data Bus" class="img-fluid rounded shadow-sm mb-3" style="max-width: 400px; width: 100%;" />
           
           <h4 class="h6 mt-3">Data Bus</h4>
           <ul>
@@ -357,7 +357,7 @@ const curriculum = [
         html: `
           <p>Memory in a computer is used for storing data and information that the system needs to process and operate. There are various types of memory, each serving different purposes in the system.</p>
           
-          <img src="images/memory.png" alt="Computer Memory" class="img-fluid rounded shadow-sm mb-3" />
+          <img src="images/memory.png" alt="Computer Memory" class="img-fluid rounded shadow-sm mb-3" style="max-width: 400px; width: 100%;" />
           
           <ul>
             <li>It allows the computer to store information temporarily or permanently, enabling quick access to data when needed.</li>
@@ -410,7 +410,7 @@ const curriculum = [
         image: "",
         html: `
           <h4 class="h6 mt-3">RAM (Random Access Memory)</h4>
-          <img src="images/ram.png" alt="RAM" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/ram.png" alt="RAM" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>RAM is the volatile memory or short-term memory of a computer system, used for temporarily storing data and instructions during processing.</li>
             <li>It allows both reading and writing operations, meaning data can be read from and written to any physical location within it.</li>
@@ -419,7 +419,7 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">ROM (Read-Only Memory)</h4>
-          <img src="images/rom.png" alt="ROM" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/rom.png" alt="ROM" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>ROM is a type of computer memory that stores data permanently.</li>
             <li>The data in ROM can only be read and not easily changed or erased.</li>
@@ -428,7 +428,7 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">Cache Memory</h4>
-          <img src="images/cache.png" alt="Cache Memory" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/cache.png" alt="Cache Memory" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>Cache Memory is a small, high-speed memory located between the primary memory (RAM) and the CPU.</li>
             <li>It is used to store frequently accessed data and instructions during processing to help the CPU work faster.</li>
@@ -448,7 +448,7 @@ const curriculum = [
         image: "",
         html: `
           <h4 class="h6 mt-3">Hard Disk Drive (HDD)</h4>
-          <img src="images/hdd.png" alt="Hard Disk Drive" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/hdd.png" alt="Hard Disk Drive" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>A hard disk is a popular storage device that holds huge amounts of data permanently.</li>
             <li>It is built with aluminum materials and coated with a ferromagnetic element.</li>
@@ -457,7 +457,7 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">Solid State Drive (SSD)</h4>
-          <img src="images/ssd.png" alt="Solid State Drive" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/ssd.png" alt="Solid State Drive" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>SSD is a modern storage device that uses semiconductor chips to store data, providing faster performance compared to traditional hard disk drives (HDDs).</li>
             <li>Despite being more expensive, SSDs are preferred in devices like laptops, notebooks, and ultra books for their enhanced performance.</li>
@@ -465,7 +465,7 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">Optical Storage Disc</h4>
-          <img src="images/optical.png" alt="Optical Disc" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/optical.png" alt="Optical Disc" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>An optical storage disc is a disc that uses laser light technology to store and retrieve data.</li>
             <li>The most commonly used optical storage discs are CDs, DVDs, Blu-ray disks, etc.</li>
@@ -474,7 +474,7 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">Flash Memory</h4>
-          <img src="images/flash.png" alt="Flash Memory" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/flash.png" alt="Flash Memory" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>Flash Memory is a type of non-volatile computer storage, meaning it retains data even when the power is turned off.</li>
             <li>It can be electrically erased and reprogrammed, making it highly versatile and efficient for use in various electronic devices.</li>
@@ -495,7 +495,7 @@ const curriculum = [
         html: `
           <p>Output devices are essential components of a computer system, responsible for presenting processed data in a meaningful format to users. These devices convert digital information generated by the processing unit into human-readable forms.</p>
           
-          <img src="images/output-devices.png" alt="Output Devices" class="img-fluid rounded shadow-sm mb-3" />
+          <img src="images/output-devices.png" alt="Output Devices" class="img-fluid rounded shadow-sm mb-3" style="max-width: 400px; width: 100%;" />
           
           <p>The primary output devices include monitors and printers, while other devices such as plotters, speakers, and headphones also serve specific output functions.</p>
         `,
@@ -513,7 +513,7 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">LED (Light Emitting Diode) Monitor</h4>
-          <img src="images/led-monitor.png" alt="LED Monitor" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/led-monitor.png" alt="LED Monitor" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>LED monitors are a type of display technology commonly found in modern monitors, televisions, and other visual display devices.</li>
             <li>Unlike traditional LCD monitors that use fluorescent backlighting, LED monitors utilize light-emitting diodes to illuminate the screen.</li>
@@ -522,7 +522,7 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">LCD (Liquid Crystal Display) Monitor</h4>
-          <img src="images/lcd-monitor.png" alt="LCD Monitor" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/lcd-monitor.png" alt="LCD Monitor" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>LCD monitors utilize liquid crystal technology to display images on a screen.</li>
             <li>They are known for their lightweight, thin profile, and energy efficiency.</li>
@@ -540,7 +540,7 @@ const curriculum = [
           <p>A printer is an output device that displays the data or information on the paper. There are mainly two types of printers: impact and non-impact printers.</p>
 
           <h4 class="h6 mt-3">Laser Printer</h4>
-          <img src="images/laser-printer.png" alt="Laser Printer" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/laser-printer.png" alt="Laser Printer" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>Laser printers utilize a laser beam to create an image on a photosensitive drum, which is then transferred onto the paper using toner (powdered ink).</li>
             <li>Laser printers are known for their fast printing speeds and crisp, professional-quality prints.</li>
@@ -548,7 +548,7 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">Ink-jet Printer</h4>
-          <img src="images/inkjet-printer.png" alt="Ink-jet Printer" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/inkjet-printer.png" alt="Ink-jet Printer" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>Inkjet printers use liquid ink sprayed onto the paper to create text and images.</li>
             <li>They are known for their versatility and ability to produce high-resolution prints.</li>
@@ -556,7 +556,7 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">Dot-matrix Printer</h4>
-          <img src="images/dot-matrix.png" alt="Dot-matrix Printer" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/dot-matrix.png" alt="Dot-matrix Printer" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>A dot matrix printer is a type of impact printer.</li>
             <li>It features a print head containing numerous pins.</li>
@@ -565,7 +565,7 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">3D Printer</h4>
-          <img src="images/3d-printer.png" alt="3D Printer" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/3d-printer.png" alt="3D Printer" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>3D printers are a unique type of non-impact printer that builds three-dimensional objects layer by layer using various materials such as plastic, metal, or resin.</li>
             <li>They are commonly used in manufacturing, prototyping, and design industries to create prototypes, models, and custom parts.</li>
@@ -582,14 +582,14 @@ const curriculum = [
           <p>Hardware ports are sockets located on the exterior of the system unit that links to expansion boards. This architecture facilitates the connection of two devices by determining the design of the plug and socket, the types and purposes of wires involved, and the electrical signals transmitted across them.</p>
 
           <h4 class="h6 mt-3">USB Port</h4>
-          <img src="images/usb-port.png" alt="USB Port" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/usb-port.png" alt="USB Port" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>The Universal Serial Bus (USB) is used for short-distance digital data transfer.</li>
             <li>USB ports are versatile, allowing connection to a wide range of devices such as printers, cameras, keyboards, speakers, scanners, and mice.</li>
           </ul>
 
           <h4 class="h6 mt-3">Type C Port</h4>
-          <img src="images/type-c.png" alt="Type C Port" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/type-c.png" alt="Type C Port" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>The Type C port is a versatile connector found in many devices like phones and laptops.</li>
             <li>It's small and reversible, meaning you can plug it in either way.</li>
@@ -597,28 +597,28 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">HDMI</h4>
-          <img src="images/hdmi.png" alt="HDMI Port" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/hdmi.png" alt="HDMI Port" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>The High Definition Multimedia Interface (HDMI) is a common interface for transmitting high-definition audio and video signals over a single cable.</li>
             <li>It is widely used to connect devices such as digital TVs, DVD players, Blu Ray players, gaming consoles, and AppleTV to televisions.</li>
           </ul>
 
           <h4 class="h6 mt-3">VGA Port</h4>
-          <img src="images/vga.png" alt="VGA Port" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/vga.png" alt="VGA Port" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>The Video Graphics Array (VGA) port is a standard analog interface used to connect monitors, projectors, and other display devices to computers.</li>
             <li>It uses a 15 pin connector to carry analog signals for the red, green, and blue color channels (RGB), as well as horizontal and vertical synchronization signals.</li>
           </ul>
 
           <h4 class="h6 mt-3">Ethernet Port</h4>
-          <img src="images/ethernet.png" alt="Ethernet Port" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/ethernet.png" alt="Ethernet Port" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>Ethernet ports are used for wired local area networking (LAN), enabling devices to communicate within a network.</li>
             <li>Ethernet technology defines how data packets are transmitted over network cables and the protocols used for communication among networked devices.</li>
           </ul>
 
           <h4 class="h6 mt-3">Audio Port</h4>
-          <img src="images/audio-port.png" alt="Audio Port" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/audio-port.png" alt="Audio Port" class="img-fluid rounded shadow-sm mb-2" style="max-width: 400px; width: 100%;" />
           <ul>
             <li>Audio ports are essential for connecting audio devices such as headphones, microphones, speakers, and other audio equipment to electronic devices.</li>
             <li>These ports facilitate the transmission of analog audio signals between devices, allowing users to listen to audio output or record audio input.</li>
