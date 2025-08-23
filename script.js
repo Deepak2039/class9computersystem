@@ -9,6 +9,88 @@
 
 console.log('Script.js loaded successfully!');
 
+// Enhanced user experience features
+let visitedTopics = new Set();
+let totalTopics = 0;
+
+// Initialize enhanced features
+document.addEventListener('DOMContentLoaded', function() {
+  initializeEnhancements();
+  addWelcomeAnimation();
+});
+
+function initializeEnhancements() {
+  
+  // Add motivational messages
+  const motivationalMessages = [
+    "🚀 Keep exploring! You're doing great!",
+    "💡 Every topic you learn makes you smarter!",
+    "🎯 You're building valuable tech skills!",
+    "⭐ Knowledge is your superpower!",
+    "🔥 You're on fire! Keep learning!"
+  ];
+  
+  // Show random motivational message every 2 minutes
+  setInterval(() => {
+    if (Math.random() > 0.7) { // 30% chance
+      showMotivationalToast(motivationalMessages[Math.floor(Math.random() * motivationalMessages.length)]);
+    }
+  }, 120000);
+}
+
+function addWelcomeAnimation() {
+  // Add entrance animation to stat cards
+  const statCards = document.querySelectorAll('.stat-card');
+  statCards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    setTimeout(() => {
+      card.style.transition = 'all 0.6s ease-out';
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }, 200 * (index + 1));
+  });
+}
+
+
+function showMotivationalToast(message) {
+  // Create toast element
+  const toast = document.createElement('div');
+  toast.className = 'motivational-toast';
+  toast.innerHTML = message;
+  toast.style.cssText = `
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    color: #2d3748;
+    padding: 15px 20px;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    font-weight: 600;
+    transform: translateX(400px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  `;
+  
+  document.body.appendChild(toast);
+  
+  // Animate in
+  setTimeout(() => {
+    toast.style.transform = 'translateX(0)';
+  }, 100);
+  
+  // Animate out and remove
+  setTimeout(() => {
+    toast.style.transform = 'translateX(400px)';
+    setTimeout(() => {
+      document.body.removeChild(toast);
+    }, 500);
+  }, 4000);
+}
+
+console.log('Enhanced features initialized!');
+
 // Data: Modules and Subtopics with concise learning content and an image each
 const curriculum = [
   {
@@ -263,7 +345,7 @@ const curriculum = [
         html: `
           <p>The speed of a computer depends mainly on its microprocessor. The microprocessor has three main parts: Control Unit (CU), Arithmetic Logic Unit (ALU) and Memory Unit (Registers).</p>
           
-          <img src="images/cpu-components.png" alt="CPU Components" class="img-fluid rounded shadow-sm mb-3" style="max-width: 400px; width: 100%;" />
+          <img src="images/cpu-components.jpg" alt="CPU Components" class="img-fluid rounded shadow-sm mb-3" style="max-width: 400px; width: 100%;" />
           
           <h4 class="h6 mt-3">Control Unit (CU)</h4>
           <ul>
@@ -327,7 +409,7 @@ const curriculum = [
         html: `
           <p>Buses are connected lines or electronic pathways within a microprocessor chip that link its internal components. Data, address, and control are typically three types of buses in a microprocessor.</p>
           
-          <img src="images/data-bus.png" alt="Data Bus" class="img-fluid rounded shadow-sm mb-3" style="max-width: 400px; width: 100%;" />
+          <img src="images/data-bus.jpg" alt="Data Bus" class="img-fluid rounded shadow-sm mb-3" style="max-width: 400px; width: 100%;" />
           
           <h4 class="h6 mt-3">Data Bus</h4>
           <ul>
@@ -667,7 +749,7 @@ const curriculum = [
         image: "",
         html: `
           <h4 class="h6 mt-3">Open Source Software</h4>
-          <img src="images/open-source.png" alt="Open Source Software" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/open.png" alt="Open Source Software" class="img-fluid rounded shadow-sm mb-2" />
           <ul>
             <li>Open source software is a type of software that allows its source code to be publicly accessible.</li>
             <li>It means anyone can view, modify and use the code freely.</li>
@@ -675,7 +757,7 @@ const curriculum = [
           </ul>
 
           <h4 class="h6 mt-3">Proprietary Software (Close Source Software)</h4>
-          <img src="images/proprietary.png" alt="Proprietary Software" class="img-fluid rounded shadow-sm mb-2" />
+          <img src="images/pro.png" alt="Proprietary Software" class="img-fluid rounded shadow-sm mb-2" />
           <ul>
             <li>Proprietary software is a type of software that does not allow its source to be accessed by any others except the creator or the authorized organization.</li>
             <li>The CSS usually comes with a license, and users are required to purchase the software to use it.</li>
@@ -779,7 +861,7 @@ function buildSidebar() {
     btn.className = "module-toggle rounded list-group-item list-group-item-action";
     btn.setAttribute("aria-expanded", "false");
     btn.dataset.moduleId = module.id;
-    btn.innerHTML = `<span class="fw-semibold">${module.id} ${module.title}</span> <span class="chevron">▶</span>`;
+    btn.innerHTML = `<span class="fw-semibold">${module.id} ${module.title}</span>`;
     header.appendChild(btn);
 
     const list = document.createElement("div");
@@ -801,6 +883,18 @@ function buildSidebar() {
     wrapper.appendChild(list);
     topicsNav.appendChild(wrapper);
   });
+  
+  // Add Certification Exam option after all curriculum modules
+  const certWrapper = document.createElement("div");
+  certWrapper.className = "mb-2";
+  
+  const certBtn = document.createElement("button");
+  certBtn.className = "list-group-item list-group-item-action bg-warning text-dark fw-bold";
+  certBtn.innerHTML = `🏆 Certification Exam`;
+  certBtn.addEventListener("click", () => startQuiz('certification'));
+  
+  certWrapper.appendChild(certBtn);
+  topicsNav.appendChild(certWrapper);
 }
 
 function toggleModule(listEl, btnEl) {
@@ -808,22 +902,27 @@ function toggleModule(listEl, btnEl) {
   if (isHidden) {
     listEl.classList.remove("d-none");
     btnEl.setAttribute("aria-expanded", "true");
-    const chev = btnEl.querySelector(".chevron");
-    if (chev) chev.classList.add("rotate");
+    // Chevron removed
   } else {
     listEl.classList.add("d-none");
     btnEl.setAttribute("aria-expanded", "false");
-    const chev = btnEl.querySelector(".chevron");
-    if (chev) chev.classList.remove("rotate");
+    // Chevron removed
   }
 }
 
 function handleSubtopicClick(moduleId, subtopicId, updateHash = false) {
-  // Remove previous selection
-  document.querySelectorAll(".subtopic-active").forEach((el) => el.classList.remove("subtopic-active"));
+  console.log(`handleSubtopicClick called with moduleId: ${moduleId}, subtopicId: ${subtopicId}`);
+  
+  // Track visited topics
+  visitedTopics.add(subtopicId);
+  
+  // Remove active class from all subtopic buttons
+  document.querySelectorAll(".list-group-item-action").forEach((btn) => {
+    btn.classList.remove("subtopic-active");
+  });
 
-  // Set active on clicked item
-  const activeBtn = document.querySelector(`[data-subtopic-id="${CSS.escape(subtopicId)}"]`);
+  // Add active class to clicked button
+  const activeBtn = document.querySelector(`[data-subtopic-id="${subtopicId}"]`);
   if (activeBtn) activeBtn.classList.add("subtopic-active");
 
   // Find content
@@ -862,7 +961,6 @@ function handleSubtopicClick(moduleId, subtopicId, updateHash = false) {
           </button>
         </div>
       </div>
-      <div id="quizContainer" class="mt-4"></div>
     </section>
   `;
 
@@ -906,8 +1004,7 @@ function openFromHash() {
       if (list.classList.contains("d-none")) {
         list.classList.remove("d-none");
         btn.setAttribute("aria-expanded", "true");
-        const chev = btn.querySelector(".chevron");
-        if (chev) chev.classList.add("rotate");
+        // Chevron removed
       }
       
       handleSubtopicClick(module.id, subtopic.id, false);
@@ -937,12 +1034,19 @@ function showMainPage() {
     return;
   }
   
+  // Hide quiz container
+  const quizContainer = document.getElementById('quizContainer');
+  if (quizContainer) {
+    quizContainer.style.display = 'none';
+    quizContainer.innerHTML = '';
+  }
+  
   try {
     container.innerHTML = `
       <section class="mb-4">
         <h1 class="h3 fw-bold mb-2">Welcome to Class 9 Computer Systems</h1>
         <p class="text-secondary mb-3">Explore the modules on the left to learn about the parts of a computer, how they work together, and how software powers everything. Click a topic to reveal its subtopics, then choose any subtopic to read clear explanations with diagrams and examples.</p>
-        <img class="img-fluid rounded shadow-sm" alt="Computer learning" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=60" />
+        <img class="img-fluid rounded shadow-sm" alt="Computer learning" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=60" style="max-width: 500px; width: 100%;" />
       </section>
       
       <section class="alert alert-info">
@@ -952,12 +1056,7 @@ function showMainPage() {
         </div>
       </section>
       
-      <section class="mt-4 p-4 border rounded bg-light">
-        <h4 class="mb-3">Test Your Knowledge</h4>
-        <p>Ready to challenge yourself? Take our comprehensive MCQ quiz covering all topics in the Computer Systems module.</p>
-        <button class="btn btn-primary btn-lg" onclick="showQuizIntro()">Start MCQ Quiz</button>
-        <div id="quizContainer" class="mt-4"></div>
-      </section>
+      <div id="quizContainer" class="mt-4"></div>
     `;
     console.log('Main page content set successfully');
   } catch (error) {
@@ -974,28 +1073,56 @@ function generateCertificationQuestions() {
     allQuestions.push(...topic.questions);
   });
   
-  // Shuffle questions and select 100
+  // Shuffle all questions first
   const shuffled = allQuestions.sort(() => 0.5 - Math.random());
-  const selected = shuffled.slice(0, 100);
   
-  // Ensure proper distribution (20 Knowledge, 20 Higher Ability, 30 Application, 30 Understanding)
-  const knowledge = selected.filter(q => q.type === "Knowledge").slice(0, 20);
-  const higherAbility = selected.filter(q => q.type === "Higher Ability").slice(0, 20);
-  const application = selected.filter(q => q.type === "Application").slice(0, 30);
-  const understanding = selected.filter(q => q.type === "Understanding").slice(0, 30);
+  // Get available questions by type
+  const knowledgeQuestions = shuffled.filter(q => q.type === "Knowledge");
+  const higherAbilityQuestions = shuffled.filter(q => q.type === "Higher Ability");
+  const applicationQuestions = shuffled.filter(q => q.type === "Application");
+  const understandingQuestions = shuffled.filter(q => q.type === "Understanding");
   
-  return [...knowledge, ...higherAbility, ...application, ...understanding];
+  // Select questions with proper distribution, but ensure we get exactly 100
+  const knowledge = knowledgeQuestions.slice(0, 20);
+  const higherAbility = higherAbilityQuestions.slice(0, 20);
+  const application = applicationQuestions.slice(0, 30);
+  const understanding = understandingQuestions.slice(0, 30);
+  
+  // Combine all selected questions
+  const certificationQuestions = [...knowledge, ...higherAbility, ...application, ...understanding];
+  
+  // If we don't have exactly 100, fill with remaining questions
+  if (certificationQuestions.length < 100) {
+    const usedIds = new Set(certificationQuestions.map(q => q.id));
+    const remainingQuestions = shuffled.filter(q => !usedIds.has(q.id));
+    const needed = 100 - certificationQuestions.length;
+    certificationQuestions.push(...remainingQuestions.slice(0, needed));
+  }
+  
+  // Final shuffle and ensure exactly 100 questions
+  return certificationQuestions.sort(() => 0.5 - Math.random()).slice(0, 100);
 }
 
 // Function to show MCQ quiz introduction
 function showQuizIntro() {
   console.log('showQuizIntro called');
+  
+  // Reset contentInner to ensure we have the proper structure
+  const contentInner = document.getElementById('contentInner');
+  if (contentInner) {
+    // Clear all content and create fresh quiz container
+    contentInner.innerHTML = '<div id="quizContainer" class="mt-4"></div>';
+  }
+  
   const container = document.getElementById('quizContainer');
   console.log('quizContainer found:', container);
   if (!container) {
     console.error('quizContainer not found!');
     return;
   }
+  
+  // Show the quiz container
+  container.style.display = 'block';
   container.innerHTML = `
     <div class="card">
       <div class="card-header d-flex justify-content-between align-items-center">
@@ -1066,15 +1193,6 @@ function showQuizIntro() {
                 <h6 class="card-title">1.7 Computer Software</h6>
                 <p class="card-text small">20 questions covering system software, application software, and mobile/web apps.</p>
                 <button class="btn btn-primary" onclick="showTopicMCQ('1.7')">Start Quiz</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <div class="card h-100 border-warning">
-              <div class="card-body text-center">
-                <h6 class="card-title text-warning">🏆 Certification Exam</h6>
-                <p class="card-text small">100 comprehensive questions from all topics. Score 90% or above to earn your certificate!</p>
-                <button class="btn btn-warning" onclick="showCertificationIntro()">Start Certification</button>
               </div>
             </div>
           </div>
@@ -1153,7 +1271,19 @@ function showCertificationIntro() {
 
 // Function to show MCQ questions after each topic
 function showTopicMCQ(topicId) {
+  // Reset contentInner to ensure we have the proper structure
+  const contentInner = document.getElementById('contentInner');
+  if (contentInner) {
+    // Clear all content and create fresh quiz container
+    contentInner.innerHTML = '<div id="quizContainer" class="mt-4"></div>';
+  }
+  
+  // Get the quiz container
   const container = document.getElementById('quizContainer');
+  if (container) {
+    container.style.display = 'block';
+  }
+  
   const topicData = mcqData[topicId];
   
   if (!topicData) {
@@ -2373,12 +2503,24 @@ const mcqData = {
   }
 };
 
-// Simple quiz system
 let currentQuiz = null;
 let currentQuestionIndex = 0;
 let userAnswers = {};
 
 function startQuiz(topicId) {
+  // Reset contentInner to ensure we have the proper structure
+  const contentInner = document.getElementById('contentInner');
+  if (contentInner) {
+    // Clear all content and create fresh quiz container
+    contentInner.innerHTML = '<div id="quizContainer" class="mt-4"></div>';
+  }
+  
+  // Get the quiz container
+  const container = document.getElementById('quizContainer');
+  if (container) {
+    container.style.display = 'block';
+  }
+  
   if (mcqData[topicId]) {
     currentQuiz = {
       id: topicId,
